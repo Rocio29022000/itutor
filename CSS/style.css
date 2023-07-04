@@ -1,0 +1,25 @@
+* {
+     background-color: #efa238;
+    
+}
+
+h1 {
+    color: #a4df1d;
+}
+
+h2 {
+    color: #a4df1d;
+}
+
+h3 {
+    color: #a4df1d;
+}
+
+ul {
+    background-color: #a4df1d;
+    color: orange;
+    display:inline-block;
+        border:5px solid #FFC0CB;        ;
+        padding:20px;
+        
+}
