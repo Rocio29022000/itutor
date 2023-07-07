@@ -1,25 +1,176 @@
 * {
-     background-color: #efa238;
-    
+  margin-left: 5px;
 }
 
 h1 {
-    color: #a4df1d;
+  color: #a4df1d;
+  font-size: 100px;
+  margin-left: 20px;
+  margin: 2%;
+}
+
+img.lightbulb {
+  object-fit: scale-down;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  padding: 5px;
+}
+
+img.notepad {
+  object-fit: scale-down;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  padding: 5px;
+  margin-top: 0;
+}
+
+img.paper {
+  object-fit: scale-down;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  padding: 5px;
+  margin-top: 0;
+}
+
+img.squiggle {
+  object-fit: scale-down;
+  display: inline-flex;
+  width: 200px;
+  height: 200px;
+  padding: 5px;
+  margin-right: 100px;
+  margin-bottom: 50px;
+  float: right;
 }
 
 h2 {
-    color: #a4df1d;
+  color: #00581c;
+  margin-left: 20px;
 }
 
 h3 {
-    color: #a4df1d;
+  color: #507021;
+  margin-left: 20px;
+}
+
+a:link {
+  background-color: #a4df1d;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+p {
+  color: #507021;
+  margin-left: 20px;
+}
+
+body {
+  background-color: #efa238;
+  letter-spacing: 0.5px;
+  word-spacing: 1px;
+  margin-left: 20px;
+}
+
+nav {
+  color: lime;
+  margin-left: 20px;
+}
+
+.card {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 180px;
+  padding: 1.5rem;
+  margin-top: 30px;
+  margin-left: 20px;
+  background: #a4df1d;
+  color: #135e30;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 2px;
+  box-shadow: 0 0 50px 15px none;
 }
 
 ul {
-    background-color: #a4df1d;
-    color: orange;
-    display:inline-block;
-        border:5px solid #FFC0CB;        ;
-        padding:20px;
-        
+  font-size: 18pt;
+  list-style-type: " ✧ ";
+  color: #257750;
+  line-height: 50px;
+}
+
+img {
+  border-radius: 25px;
+  max-width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+button {
+  font-size: medium;
+  border-color: #507021;
+  border-style: dotted;
+  background-color: pink;
+  color: #507021;
+  border-radius: 10px;
+  box-shadow: 0 0 3px 3px pink;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+canvas {
+  border-radius: 25px;
+  max-width: 20%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.dark {
+  color: #507021;
+  background-color: #0c1453;
+}
+
+.light {
+  color: #a4df1d;
+  background-color: #efa238;
+}
+
+.hover {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
