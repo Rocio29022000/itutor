@@ -48,6 +48,7 @@ for (let i=0; i < possibleQuestions.length; i++){
 // Rendering the questions
 function renderFillQ(){
   testN = JSON.parse(localStorage.getItem("testNumber"))
+  
     while(questionAnswer.firstChild){
         questionAnswer.removeChild(questionAnswer.firstChild)
     }
@@ -57,15 +58,14 @@ function renderFillQ(){
     questionAnswer.appendChild(questionH)
 
     let q1 = randomNum();
-    question.src = testQuestions[q1].src;
-    question.alt = testQuestions[q1].name;
-    
-    console.log(testQuestions[q1].name)
-
     //Avoid repetition
     while (shownQuestions.includes(q1)){
         q1 = randomNum();
     }
+    question.src = testQuestions[q1].src;
+    question.alt = testQuestions[q1].name;
+    console.log(q1)
+    console.log(testQuestions[q1].name)
 
     shownQuestions.push(q1);
     console.log("Questions shown up to now: " + shownQuestions)
