@@ -28,7 +28,6 @@ let answers = [];
 
 //Random Number generator CHECK IF QUESTIONS OR ALL QUESTIONS FOR THE LENGTH
 function randomNum(){
-    // return Math.floor(Math.random() * testQuestions.length);
     return Math.floor(Math.random()*possibleQuestions.length);
 
 }
@@ -47,29 +46,36 @@ for (let i=0; i < possibleQuestions.length; i++){
 
 // Rendering the questions
 function renderFillQ(){
+  //Updates the number of the test in the local storage 
   testN = JSON.parse(localStorage.getItem("testNumber"))
   
-    while(questionAnswer.firstChild){
-        questionAnswer.removeChild(questionAnswer.firstChild)
-    }
+  //Removes the previous form in the question area 
+  while(questionAnswer.firstChild){
+      questionAnswer.removeChild(questionAnswer.firstChild)
+  }
 
-    let questionH = document.createElement("h2");
-    questionH.textContent = `Question ${questionOn}:`
-    questionAnswer.appendChild(questionH)
+  //Sets the Question header
+  let questionH = document.createElement("h2");
+  questionH.textContent = `Question ${questionOn}:`
+  questionAnswer.appendChild(questionH)
 
-    let q1 = randomNum();
-    //Avoid repetition
-    while (shownQuestions.includes(q1)){
-        q1 = randomNum();
-    }
-    question.src = testQuestions[q1].src;
-    question.alt = testQuestions[q1].name;
-    console.log(q1)
-    console.log(testQuestions[q1].name)
+  //Randomly chooses the question to display 
+  let q1 = randomNum();
 
-    shownQuestions.push(q1);
-    console.log("Questions shown up to now: " + shownQuestions)
+  //Avoid repetition
+  while (shownQuestions.includes(q1)){
+      q1 = randomNum();
+  }
+  
+  //Renders the question, console logs to check if it is the right question and pushes it to an array
+  question.src = testQuestions[q1].src;
+  question.alt = testQuestions[q1].name;
+  console.log(q1)
+  console.log(testQuestions[q1].name)
 
+  shownQuestions.push(q1);
+
+    //Logic to render the form
     if (testQuestions[q1].name == "diff-01"){
         answerDiff01();
     } else if (testQuestions[q1].name == "diff-02"){
@@ -82,6 +88,7 @@ function renderFillQ(){
         answerSurd01();
     }
 
+    //Add buttons for next and finish with their respectives functionalities
     let button1 = document.createElement("BUTTON");
     let next = document.createTextNode("Next");
     button1.appendChild(next)
@@ -108,6 +115,7 @@ function renderFillQ(){
 }
 renderFillQ();
 
+//Sets the forms for each possible answer
 function answerDiff01(){
     let form = document.createElement("FORM");
     form.setAttribute("type", "text");
@@ -231,19 +239,19 @@ function answerSurd01(){
 
 //Function for the next question
 function nextB(){
-    retrieve();
+    retrieveAndCheck();
     console.log("Next question please!");
     renderFillQ();
 }
 //Function for results page
 function finishB(){
-  retrieve();
+  retrieveAndCheck();
   console.log("You finished the test, YAY!");
   results();
 }
 
-// Function to retrieve the user input
-function retrieve(){
+// Function to retrieve the user input and check if answer is correct or incorrect
+function retrieveAndCheck(){
     let userAnswer = questionAnswer.getElementsByTagName("INPUT")
     let index = shownQuestions[previousQuestion];
     let compare = testQuestions[index].name;
@@ -312,7 +320,7 @@ function retrieve(){
             
             console.log("The score is " + score)
 }
-    
+
 function results(){
   //Remove content
   questionAnswer.remove()
@@ -323,7 +331,7 @@ function results(){
   questionArea.appendChild(message)
 
   let stat = Math.round((score/correctAnswers.length)*100);
-  let result = document.createElement("p")
+  let result = document.createElement("h3")
   result.textContent = `You scored ${score} out of ${correctAnswers.length}, which is ${stat}%.`
   questionArea.appendChild(result)
 
