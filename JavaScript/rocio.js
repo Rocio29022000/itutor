@@ -68,7 +68,7 @@ function renderFillQ(){
     }
 
     shownQuestions.push(q1);
-    console.log(shownQuestions)
+    console.log("Questions shown up to now: " + shownQuestions)
 
     if (testQuestions[q1].name == "diff-01"){
         answerDiff01();
@@ -232,23 +232,22 @@ function answerSurd01(){
 //Function for the next question
 function nextB(){
     retrieve();
-    console.log("Next question please!")
+    console.log("Next question please!");
     renderFillQ();
 }
 //Function for results page
 function finishB(){
-  // retrieve()
-  console.log("You finished the test, YAY!")
-
-  results()
+  retrieve();
+  console.log("You finished the test, YAY!");
+  results();
 }
 
 // Function to retrieve the user input
 function retrieve(){
     let userAnswer = questionAnswer.getElementsByTagName("INPUT")
     let index = shownQuestions[previousQuestion];
-    let compare = testQuestions[index].name
-    console.log(compare)
+    let compare = testQuestions[index].name;
+    console.log(compare);
     if (compare == "diff-01"){
         console.log("This is the first differential Q!")
         for (let i = 0; i < userAnswer.length; i++){
@@ -368,4 +367,5 @@ function setLocalStorage(){
   localStorage.setItem(`Results ${testN}`, JSON.stringify(score));
   console.log("Score stored")
   console.log(testN)
+  console.log(localStorage.length)
 }
