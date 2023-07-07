@@ -15,5 +15,41 @@
       }
     </style>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <form id="displayMode">
+        <button class="hover">switch themes!</button>
+        <label class="displayLabel" for="dark">
+          <input
+            type="radio"
+            name="mode"
+            id="themeSwitch"
+            class="mode"
+            value="dark"
+          />
+          <span>Dark</span>
+        </label>
+        <label class="displayLabel" for="light">
+          <input
+            type="radio"
+            name="mode"
+            id="themeSwitchBack"
+            class="mode"
+            value="light"
+          />
+          <span>Light</span>
+        </label>
+      </form>
+    </header>
+    
+    <h1> Results Page </h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="maths.html">Maths</a>
+    </nav>
+    <canvas id="resultsChart"></canvas>
+
+    <script src="/JavaScript/theme-test.js"></script>
+
+  </body>
 </html>
