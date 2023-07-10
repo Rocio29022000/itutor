@@ -41,7 +41,7 @@ function Fill(name, src) {
 
 // Create new instances of an object (create new question)
 for (let i=0; i < possibleQuestions.length; i++){
-    new Fill(possibleQuestions[i], `../Assets/Maths/c1/Easy/Fill/${possibleQuestions[i]}.png`);
+    new Fill(possibleQuestions[i], `./Assets/Maths/c1/Easy/Fill/${possibleQuestions[i]}.png`);
 }
 
 // Rendering the questions
